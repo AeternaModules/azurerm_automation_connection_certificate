@@ -1,3 +1,7 @@
+output "automation_connection_certificates_id" {
+  description = "Map of id values across all automation_connection_certificates, keyed the same as var.automation_connection_certificates"
+  value       = { for k, v in azurerm_automation_connection_certificate.automation_connection_certificates : k => v.id }
+}
 output "automation_connection_certificates_automation_account_name" {
   description = "Map of automation_account_name values across all automation_connection_certificates, keyed the same as var.automation_connection_certificates"
   value       = { for k, v in azurerm_automation_connection_certificate.automation_connection_certificates : k => v.automation_account_name }
